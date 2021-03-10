@@ -49,7 +49,7 @@ const FeaturesTiles = ({
 
   const sectionHeader = {
     title: 'Tipo de sites que',
-    title_mark: 'desenvolvemos',
+    title_mark: 'DESENVOLVEMOS',
     // paragraph: 'torne-se um cliente e desenvolva seu negocio com agente'
   };
 
@@ -99,7 +99,7 @@ const FeaturesTiles = ({
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Lojas Virtuais ( E-commerces)
+                    Lojas Virtuais
                     </h4>
                   <p className="m-0 text-sm">
                     Mostra seus produtos como um catálogo online e venda-os diretamente em seu site
@@ -135,7 +135,7 @@ const FeaturesTiles = ({
         </div>
 
         <div className="center-content infor_plus mt-20">
-          <h5 className="plus_title"><span className="text-color-primary-gradient font-height">Desenvolvemos o site</span> de a acordo com suas necessidades e acrescentamos tudo isso para que ele fique visível aos mecanismo de buscas</h5>
+          <h2 className="plus_title"><span className="text-color-primary-gradient">Desenvolvemos o site</span> de a acordo com suas necessidades e acrescentamos tudo isso para que ele fique visível aos mecanismo de buscas</h2>
           <div className="infor_tags">
             <ul className="tags_ul">
               <li><i class="bi bi-check2-circle"></i>  Segurança WordPress Defender</li>
@@ -149,6 +149,8 @@ const FeaturesTiles = ({
               <li><i class="bi bi-check2-circle"></i>  Google Maps</li>
               <li><i class="bi bi-check2-circle"></i>  SEO</li>
             </ul>
+          </div>
+          <div className="infor_titles">
             <h2>Todo site Completamente <span className="text-color-primary-gradient">Personalizavel</span></h2>
             <ButtonGroup>
               {/* <Button tag="a" target="-blank" color="primary" wideMobile href="#">
