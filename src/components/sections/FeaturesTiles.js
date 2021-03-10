@@ -48,7 +48,7 @@ const FeaturesTiles = ({
   );
 
   const sectionHeader = {
-    title: 'Tipos de sites que',
+    title: 'Tipo de sites que',
     title_mark: 'desenvolvemos',
     // paragraph: 'torne-se um cliente e desenvolva seu negocio com agente'
   };
@@ -80,7 +80,7 @@ const FeaturesTiles = ({
                     Sites Institucionais
                     </h4>
                   <p className="m-0 text-sm">
-                    Forneça informações relevantes sobre seus produtos e serviços para seus clientes em potencial, para que eles o contatem diretamente, demonstrando interesse por eles.
+                    Fornece informações relevantes sobre seus produtos e serviços para seus clientes em potencial, para que eles o contatem diretamente demonstrando interesse por eles.
                     </p>
                 </div>
               </div>
@@ -99,10 +99,10 @@ const FeaturesTiles = ({
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Lojas Virtuais
+                    Lojas Virtuais ( E-commerces)
                     </h4>
                   <p className="m-0 text-sm">
-                    Mostre seus produtos como um catálogo online ou venda seus produtos diretamente em seu site.
+                    Mostra seus produtos como um catálogo online e venda-os diretamente em seu site
                     </p>
                 </div>
               </div>
@@ -125,7 +125,7 @@ const FeaturesTiles = ({
                     Landings Pages
                     </h4>
                   <p className="m-0 text-sm">
-                    Ideais para as suas campanhas digitais, conseguem captar o cliente com design moderno e conteúdos úteis para efetuarem uma compra, assinatura, etc.
+                    Ideais para as suas campanhas digitais, Com design moderno e Conteúdos úteis para que seus clientes efetuem uma compra, assinatura, etc...
                     </p>
                 </div>
               </div>

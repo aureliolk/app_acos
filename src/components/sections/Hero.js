@@ -55,7 +55,7 @@ const Hero = ({
             </h1>
             <div className="container-xs">
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-              Criamos o site da sua empresa com as melhores práticas de segurança, funcionalidade e responsividade aprimorada para uma melhor experiência do Usuário.
+              Criamos o site de sua empresa com as melhores práticas em <strong>SEGURANÇA</strong>,<strong>FUNCIONALIDADES</strong> e <strong>RESPONSIVIDADE</strong> aprimorada para uma melhor experiência do Usuário.
                 </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
