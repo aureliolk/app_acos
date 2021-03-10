@@ -135,7 +135,7 @@ const FeaturesTiles = ({
         </div>
 
         <div className="center-content infor_plus mt-20">
-          <h5 className="plus_title"><span className="text-color-primary-gradient font-height">Desenvolvemos o site</span> de a acordo com suas necessidades e acrescentamos tudo isso para que ele fique visivel aos mecanismo de buscas</h5>
+          <h5 className="plus_title"><span className="text-color-primary-gradient font-height">Desenvolvemos o site</span> de a acordo com suas necessidades e acrescentamos tudo isso para que ele fique visível aos mecanismo de buscas</h5>
           <div className="infor_tags">
             <ul className="tags_ul">
               <li><i class="bi bi-check2-circle"></i>  Segurança WordPress Defender</li>
