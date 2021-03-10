@@ -48,7 +48,7 @@ const FeaturesTiles = ({
   );
 
   const sectionHeader = {
-    title: 'Tipo de sites que',
+    title: 'Tipos de sites que',
     title_mark: 'DESENVOLVEMOS',
     // paragraph: 'torne-se um cliente e desenvolva seu negocio com agente'
   };
@@ -102,7 +102,7 @@ const FeaturesTiles = ({
                     Lojas Virtuais
                     </h4>
                   <p className="m-0 text-sm">
-                    Mostra seus produtos como um catálogo online e venda-os diretamente em seu site
+                    Venda seus produtos direto do site com Gateways de pagamentos seguro.
                     </p>
                 </div>
               </div>
@@ -125,7 +125,7 @@ const FeaturesTiles = ({
                     Landings Pages
                     </h4>
                   <p className="m-0 text-sm">
-                    Ideais para as suas campanhas digitais, Com design moderno e Conteúdos úteis para que seus clientes efetuem uma compra, assinatura, etc...
+                    Ideais para as suas campanhas digitais com design moderno e Conteúdos úteis para que seus clientes efetuem uma compra, assinatura, etc...
                     </p>
                 </div>
               </div>
@@ -145,13 +145,13 @@ const FeaturesTiles = ({
               <li><i class="bi bi-check2-circle"></i>  Google Analytics</li>
               <li><i class="bi bi-check2-circle"></i>  Pixel Facebook</li>
               <li><i class="bi bi-check2-circle"></i>  Design Responsivo</li>
-              <li className="custon-mb-hidden"><i class="bi bi-check2-circle"></i>  Paginas Fluidas </li>
+              <li className="custon-mb-hidden"><i class="bi bi-check2-circle"></i>  Páginas Fluidas </li>
               <li><i class="bi bi-check2-circle"></i>  Google Maps</li>
               <li><i class="bi bi-check2-circle"></i>  SEO</li>
             </ul>
           </div>
           <div className="infor_titles">
-            <h2>Todo site Completamente <span className="text-color-primary-gradient">Personalizavel</span></h2>
+            <h2>Todo site Completamente <span className="text-color-primary-gradient">Personalizável</span></h2>
             <ButtonGroup>
               {/* <Button tag="a" target="-blank" color="primary" wideMobile href="#">
                     Ver Portifolio

@@ -55,7 +55,7 @@ const Hero = ({
             </h1>
             <div className="container-xs">
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-              Criamos o site de sua empresa com as melhores práticas em <span className="text-color-primary-gradient fw-700">SEGURANÇA </span>,<span className="text-color-primary-gradient fw-700">FUNCIONALIDADES</span> e <span className="text-color-primary-gradient fw-700">RESPONSIVIDADE</span> aprimorada para uma melhor experiência do Usuário.
+              Criamos o site de sua empresa com as melhores práticas em <span className="text-color-primary-gradient fw-700">SEGURANÇA </span>,<span className="text-color-primary-gradient fw-700">FUNCIONALIDADES</span> e <span className="text-color-primary-gradient fw-700">RESPONSIVIDADE</span> aprimoradas para uma melhor experiência do Usuário.
                 </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
