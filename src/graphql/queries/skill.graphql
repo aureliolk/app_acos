@@ -1,0 +1,7 @@
+query getSkill {
+  skills(orderBy: level_DESC) {
+    level
+    technology
+    id
+  }
+}

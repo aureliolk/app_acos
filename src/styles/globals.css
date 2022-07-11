@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+@tailwind base;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  @apply bg-teal-900 text-slate-100
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@tailwind components;
+
+.svg-wrapper {
+  @apply h-16 w-80 relative
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /* stroke: #19f6e8; */
+  @apply stroke-orange-600
+}
+
+.text {
+  color: #fff;
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 32px;
+  position: relative;
+  top: -48px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+
+/* Bar Progress */
+
+.shim-orange {
+  position: relative;
+  overflow: hidden;
+  @apply bg-orange-500
+}
+
+.shim-orange::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(90deg,
+      rgba(233, 233, 233, 1) 0,
+      rgba(233, 233, 233, 0.9) 50%,
+      rgba(233, 233, 233, 0.8) 100%);
+  animation: shimmer 2s ease-out infinite;
+  content: "";
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+}
+
+/*Custon Logo TypeScript*/
+.st0t {
+  fill: #007acc
+}
+
+.st1t {
+  fill: #fff
+}
+
+/*Custon Logo Shopify*/
+.st0s {
+  fill: #8DB849;
+}
+
+.st1s {
+  fill: #5A863E;
+}
+
+.st2s {
+  fill: #FFFFFE;
+}
+
+.st3s {
+  fill: #1A1919;
+}
+
+/* Custom Logo List */
+.logolist{
+  @apply w-full h-full rounded p-2 cursor-pointer border border-teal-800 flex items-center justify-center hover:ring hover:ring-orange-500 hover:border-none
+}
+.logolist3{
+  @apply w-full h-full rounded p-3 cursor-pointer border border-teal-800 flex items-center justify-center hover:ring hover:ring-orange-500 hover:border-none
+}
+
+
+
+@tailwind utilities;

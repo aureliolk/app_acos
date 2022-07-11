@@ -1,0 +1,12 @@
+query getPortifolio {
+  portfolios {
+    id
+    description
+    url
+    title
+    screenshot {
+      url
+    }
+  }
+}
+    
