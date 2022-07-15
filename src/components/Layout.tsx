@@ -6,6 +6,7 @@ export interface ChildrenProps {
 }
 
 export const Layout = ({ children }: ChildrenProps) => {
+    
     return (
         <>
             <Header />

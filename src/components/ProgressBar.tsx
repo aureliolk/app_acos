@@ -34,7 +34,7 @@ const ProgressBar = ({
       right: 0,
       height,
       zIndex: 49,
-      top: position === "top" ? 58 : "unset",
+      top: position === "top" ? 65 : "unset",
       bottom: position === "bottom" ? 0 : "unset",
       background: gradient ? `linear-gradient(to ${direction}, ${color} ${scroll / 2}%,${gradientColor} ${scroll}%, transparent 0)` : `linear-gradient(to ${direction}, ${color} ${scroll}%, transparent 0)`
     }

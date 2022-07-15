@@ -1,0 +1,12 @@
+query GetFeedBacks {
+  customers {
+    id
+    name
+    lastName
+    business
+    avatar {
+      url
+    }
+    feedback
+  }
+}

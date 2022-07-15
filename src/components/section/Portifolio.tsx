@@ -1,7 +1,18 @@
-import { Link } from "phosphor-react"
+import { Link } from "phosphor-react";
 import { useState } from "react"
 import { useGetPortifolioQuery } from "../../graphql/generated"
-import { ButonNext } from "../button/Buttons"
+import { ButtonOrder } from "../button/Buttons"
+
+
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 export const Portifolio = () => {
 
@@ -15,40 +26,70 @@ export const Portifolio = () => {
 
     return (
         <>
-            <section id="portifolio" className="h-screen  bg-cover font-grotesk pt-14 flex flex-col justify-between">
+            <section id="portifolio" className="bg-cover font-grotesk pt-10 px-2 ">
                 <div>
-                    <h2 className="text-7xl text-yellow-100 font-bold">Portfólio</h2>
-                    <p className="w-1/2 py-8">Confira alguns dos meus projetos .</p>
-                    <div className="w-full grid grid-cols-3 gap-8">
-                        {data.portfolios.map(site => {
-                            return (
-                                <div key={site.id} className="flex flex-col items-center">
-                                    <div className="w-full h-80 rounded overflow-hidden cursor-pointer relative"
-                                        onMouseEnter={
-                                            () => { setShow(true), setIdElement(site.id) }
-                                        }
-                                        onMouseLeave={
-                                            () => { setShow(false), setIdElement(site.id) }
-                                        }
-                                    >
-                                        <img src={site.screenshot.url} alt={`Imagem ${site.title}`} />
-                                        {show && site.id === idElemnt && (
-                                            <a href={site.url} target="_blank" className="flex-1 flex flex-col justify-between rounded border border-orange-500 p-4 absolute bottom-0 h-1/2 bg-teal-900/90">
-                                                <div className="flex flex-col">
-                                                    <span className="font-bold text-2xl">{site.title}</span>
-                                                    <span className="text-xs">{site.description}</span>
-                                                </div>
-                                                <span className="text-sm flex items-center justify-center gap-2 hover:text-orange-500 font-light">{<Link />} Ver Site</span>
-                                            </a>
-                                        )}
-                                    </div>
+                    <h2 className="text-center lg:text-start text-7xl text-yellow-100 font-bold">Portfólio</h2>
+                    <p className="text-2xl lg:text-base lg:font-light text-center lg:text-start my-8 lg:my-2">Confira alguns dos meus projetos .</p>
+                    <Swiper
+                        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                        spaceBetween={50}
+                        slidesPerView={3}
+                        scrollbar={
+                            { 
+                                draggable: true,
+                            }
+                        }
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                        breakpoints={{
+                            420:{
+                                slidesPerView: 1,
+                                spaceBetween: 20
+                            },
+                            640:{
+                                slidesPerView: 3,
+                                spaceBetween: 20
+                            }
+                        }}
+                        effect="fade"
+                        fadeEffect={{
+                            crossFade:true
+                        }}
+                        autoplay={{
+                            delay:3000,
+                        }}
+                    >
+                    {data.portfolios.map(site => {
+                        return (
+                            <SwiperSlide key={site.id}>
+                            <div  className="flex flex-col items-center w-full h-[480px] mb-4  lg:p-0 lg:h-[395px]">
+                                <div className="w-full rounded overflow-hidden cursor-pointer relative"
+                                    onMouseEnter={
+                                        () => { setShow(true), setIdElement(site.id) }
+                                    }
+                                    onMouseLeave={
+                                        () => { setShow(false), setIdElement(site.id) }
+                                    }
+                                >
+                                    <img src={site.screenshot.url} alt={`Imagem ${site.title}`} />
+                                    {show && site.id === idElemnt && (
+                                        <a href={site.url} target="_blank" className="flex-1 flex flex-col justify-between rounded border border-orange-500 p-4 absolute bottom-0 h-1/2 bg-teal-900/90">
+                                            <div className="flex flex-col">
+                                                <span className="font-bold text-2xl">{site.title}</span>
+                                                <span className="text-xs">{site.description}</span>
+                                            </div>
+                                            <span className="text-sm flex items-center justify-center gap-2 hover:text-orange-500 font-light">{<Link />} Ver Site</span>
+                                        </a>
+                                    )}
                                 </div>
-                            )
-                        })}
+                            </div>
+                            </SwiperSlide>
+                        )
+                    })}
+                    </Swiper>
+                    <div className="block lg:hidden mt-28" >
+                        <ButtonOrder />
                     </div>
-                </div>
-                <div className="flex justify-center">
-                    <ButonNext src="#contato" />
                 </div>
             </section>
         </>

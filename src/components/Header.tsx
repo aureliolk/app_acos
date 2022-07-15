@@ -1,21 +1,28 @@
 import { GithubLogo, InstagramLogo, LinkedinLogo, List, X } from "phosphor-react"
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import ProgressBar from './ProgressBar'
 import classNames from "classnames";
 import { Transition } from '@headlessui/react'
+import { SectionContext } from "./contexts/SectionContexts";
 
 
 export const Header = () => {
+    const {setShowButtonHome,showButtonHome} = useContext(SectionContext)
     const [animateHeader, setAnimateHeader] = useState(false);
     const [scroll, setScroll] = useState(0);
     const [showMenu, setShowMenu] = useState(false)
 
+
+
     useEffect(() => {
         const listener = () => {
+            console.log(showButtonHome)
             setScroll(window.scrollY)
-            if (window.scrollY > 100) {
+            if (window.scrollY > 33) {
                 setAnimateHeader(true);
-            } else setAnimateHeader(false);
+            } else {
+                setAnimateHeader(false);
+            }
         };
         window.addEventListener("scroll", listener);
         return () => {
@@ -31,7 +38,13 @@ export const Header = () => {
                 <a href="#" className="w-44 h-full">
                     <img src="/LgAcosv4x.png" alt="Logo da Acos Services" />
                 </a>
-                <div className={classNames({ "hidden  lg:block flex-1": !showMenu }, { "block": showMenu })}>
+                <div className={classNames({ "hidden  lg:block flex-1": showMenu === false }, { "block": showMenu })}>
+                <ul className="justify-center gap-8 font-grotesk font-light  hidden lg:flex lg:text-base flex-col lg:flex-row">
+                            <a href="#" className="hover:underline"><li>Início</li></a>
+                            <a href="#tecnologias" className="hover:underline"><li>Tecnologias</li></a>
+                            <a href="#portifolio" className="hover:underline"><li>Portifolio</li></a>
+                            <a href="#" className="hover:underline"><li>Sobre</li></a>
+                        </ul>
                     <Transition
                         show={showMenu}
                         enter="transition ease-in-out duration-1000 transform"
