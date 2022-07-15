@@ -23,7 +23,7 @@ export const Body = () => {
                 <section className={classNames("h-screen flex flex-col justify-between w-full",{"h-auto":showTecnology})} >
                     <div className='py-20 w-full flex flex-col lg:flex-row justify-between items-center'>
                         <div className='flex flex-col justify-between gap-2 flex-1'>
-                            <h1 className="text-yellow-100 font-grotesk font-bold text-center p-4 lg:text-start text-5xl lg:text-6xl ">
+                            <h1 className="text-yellow-100 font-grotesk font-bold text-center p-1 lg:text-start text-5xl lg:text-6xl ">
                                 Olá! Eu sou <span className="">Aurélio</span> <br />
                                 <span >
                                     seu Desenvolvedor

@@ -3,7 +3,7 @@ import { EnvelopeSimple, MapPinLine, WhatsappLogo } from "phosphor-react"
 export const Contato = () => {
 
     return (
-        <section id="contato" className="font-grotesk py-10 ">
+        <section id="contato" className="font-grotesk py-10 px-2">
             <h2 className="text-7xl text-yellow-100 font-bold text-center lg:text-start mb-8">Contato</h2>
             <div className="flex flex-col p-2 lg:p-0 lg:flex-row">
                 <div className="flex flex-col gap-10 w-full lg:w-72">

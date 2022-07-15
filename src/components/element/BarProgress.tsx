@@ -2,9 +2,11 @@ import { useEffect, useState } from "react"
 
 interface ProgressBarProps{
     width:number
+    loading: string
+    bgSpan: string
 }
 
-export const ProgressBar = ({width}:ProgressBarProps) => {
+export const BarProgress = ({width,loading,bgSpan}:ProgressBarProps) => {
     
     const [lastSpan, setLastSpan] = useState<number>(0)
     
@@ -20,11 +22,17 @@ export const ProgressBar = ({width}:ProgressBarProps) => {
                 }
             }
         }
-        if(width > 10){
+        if(width > 10 && width < 99){
             setLastSpan(Number(width.toFixed()[1]))   
             for (let index = 0; index < Number(width.toFixed()[0]); index++) {
-                bar?.insertAdjacentHTML("afterbegin","<span>")                
+                bar?.insertAdjacentHTML("afterbegin",`<span style="background-color:${bgSpan}">`)                
             }
+        }else{
+            setLastSpan(Number(width.toFixed()[2]))   
+            for (let index = 0; index < Number(width.toFixed()[0]+width.toFixed()[1]) ; index++) {
+                bar?.insertAdjacentHTML("afterbegin",`<span style="background-color:${bgSpan}">`)                
+            }
+            
         }
     },[width])  
 
@@ -32,8 +40,8 @@ export const ProgressBar = ({width}:ProgressBarProps) => {
     return (
         <div className=" w-80 gap-5 flex flex-col text-gray-900">
             <div className="loading-bar">
-                <div className="loading-bar progress">
-                    <span className="last" style={{ width: `${lastSpan}%` }}></span>
+                <div className={`loading-bar progress ${loading}`}>
+                    <span className="last" style={{ width: `${lastSpan}%`, backgroundColor:`${bgSpan}`}}></span>
                 </div>
             </div>
         </div>

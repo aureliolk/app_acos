@@ -1,3 +1,4 @@
+import { BoxSocial } from "./element/BoxSocial"
 import { Footer } from "./Footer"
 import { Header } from "./Header"
 
@@ -9,7 +10,8 @@ export const Layout = ({ children }: ChildrenProps) => {
     
     return (
         <>
-            <Header />
+            <Header/>
+            <BoxSocial/>
             {children}
             <Footer />
         </>

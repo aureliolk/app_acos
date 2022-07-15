@@ -13,7 +13,10 @@ interface SectionContextProps {
     NextButton:(id:string)=>void
     ScrollToHome:()=>void
     setShowButtonHome: (showButtonHome:boolean)=>void
-
+    goToTecnology:()=>void
+    goToPortifolio:()=>void
+    goToContato:()=>void
+    goToFeedBack:()=>void
 
 }
 
@@ -69,6 +72,42 @@ export const SectionProvider = ({ children }: ChildrenProps) => {
         }
     }
 
+    function goToTecnology(){
+        setShowTecnology(true)
+        setHiddenButton(true)
+        setTimeout(() => {
+            scrollToElement("#tecnologias")
+        }, 1000);
+    }
+    function goToPortifolio(){
+        setShowTecnology(true)
+        setShowPortifolio(true)
+        setHiddenButton(true)
+        setTimeout(() => {
+            scrollToElement("#portifolio")
+        }, 1000);
+    }
+    function goToContato(){
+        setShowTecnology(true)
+        setShowPortifolio(true)
+        setShowContato(true)
+        setHiddenButton(true)
+        setTimeout(() => {
+            scrollToElement("#contato")
+        }, 1000);
+    }
+    function goToFeedBack(){
+        setShowTecnology(true)
+        setShowPortifolio(true)
+        setShowContato(true)
+        setShowFeedBack(true)
+        setHiddenButton(true)
+        setShowButtonHome(true)
+        setTimeout(() => {
+            scrollToElement("#feedback")
+        }, 1000);
+    }
+
     const ScrollToHome=()=>{
         setIsLoading(true)
         scrollToElement("#menu")
@@ -76,7 +115,7 @@ export const SectionProvider = ({ children }: ChildrenProps) => {
     }
 
     return (
-        <SectionContext.Provider value={{showButtonHome,showTecnology,showContato,showPortifolio,isLoading,hiddenButton,showFeedBack, NextButton,ScrollToHome,setShowButtonHome}}>
+        <SectionContext.Provider value={{showButtonHome,showTecnology,showContato,showPortifolio,isLoading,hiddenButton,showFeedBack, NextButton,ScrollToHome,setShowButtonHome,goToContato,goToFeedBack,goToPortifolio,goToTecnology}}>
             {children}
         </SectionContext.Provider>
     )

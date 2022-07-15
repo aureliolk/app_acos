@@ -1,14 +1,13 @@
 import { Transition } from "@headlessui/react"
-import classNames from "classnames"
-import { CaretDoubleDown, CaretDoubleUp } from "phosphor-react"
 import { useState } from "react"
-
-import { ButonNext, ButtonOrder } from "../button/Buttons"
+import { CaretDoubleDown, CaretDoubleUp } from "phosphor-react"
+import { ButtonOrder } from "../button/Buttons"
 import { LogoListTecnology } from "../element/Logolisttecnology"
+import classNames from "classnames"
 
 
 export const Technology = () => {
-   
+
     const [showDesc, setShowDesc] = useState(false)
 
     return (
@@ -18,11 +17,13 @@ export const Technology = () => {
                 <div className="flex flex-col lg:flex-row lg:h-full-row ">
                     <div className="flex flex-col lg:w-[35%] justify-between py-4 lg:p-4">
                         <div className="flex justify-center flex-col">
-                            <div className={classNames("h-12 lg:h-full overflow-hidden w-full", { "h-36 text-center": showDesc })}>
+                            <div className={classNames("h-12 lg:h-full overflow-hidden w-full flex flex-col gap-2", { "h-36 text-center": showDesc })}>
                                 {!showDesc && (
                                     <>
-                                        <p >Minha linguagem principal é JavaScript, mais entendo que a melhor linguagem é aquela que soluciona problemas e gera valor ao cliente. Ciente disso estou me tornando um excelete Desenvolvedor FullStack pois acredito que há busca de conhecimento nunca termina.</p>
-                                        <p >Ja trabalhei ou trabalho algumas dessas tecnologias</p>
+                                        <p >Minha linguagem principal é JavaScript, e eu entendo que a melhor a linguagem é aquela que resolve e gera valor a demanda do cliente.</p>
+                                        <p>Então sabendo disso eu procuro sempre está atuando com tecnologias que resolva o problema dos meus cliente.</p>
+                                        <p >Aqui está algumas das tecnologias que trabalho ou já trabalhei nesses anos de desenvolvimento.
+                                        </p>
                                     </>
                                 )}
                                 <Transition
@@ -33,9 +34,12 @@ export const Technology = () => {
                                     leave="transition-opacity  duration-[100ms]"
                                     leaveFrom="opacity-100"
                                     leaveTo="opacity-0"
+                                    className={"flex flex-col gap-2"}
                                 >
-                                    <p >Minha linguagem principal é JavaScript, mais entendo que a melhor linguagem é aquela que soluciona problemas e gera valor ao cliente. Ciente disso estou me tornando um excelete Desenvolvedor FullStack pois acredito que há busca de conhecimento nunca termina.</p>
-                                    <p>Ja trabalhei ou trabalho algumas dessas tecnologias</p>
+                                    <p >Minha linguagem principal é JavaScript, e eu entendo que a melhor a linguagem é aquela que resolve e gera valor a demanda do cliente.</p>
+                                    <p>Então sabendo disso eu procuro sempre está atuando com tecnologias que resolva o problema dos meus cliente.</p>
+                                    <p >Aqui está algumas das tecnologias que trabalho ou já trabalhei nesses anos de desenvolvimento.
+                                    </p>
                                 </Transition>
 
                             </div>

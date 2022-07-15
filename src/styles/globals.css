@@ -177,9 +177,9 @@ a {
   width: 100%;
   background: #cecece;
   padding: 2px;
-  border: 1px solid rgb(217, 151, 125);
+  /* border: 1px solid rgb(217, 151, 125); */
   border-radius: 6px;
-  box-shadow: 0 0 20px 0 rgba(217, 153, 125, 0.5);
+  /* box-shadow: 0 0 20px 0 rgba(217, 153, 125, 0.5); */
   margin: auto;
 }
 
@@ -191,7 +191,7 @@ a {
 
 .progress span {
   /* margin: auto; */
-  background: rgb(217, 177, 125);
+  /* background: rgb(217, 177, 125); */
   border-radius: 4px;
   width: 10%;
   max-width: 10%;
@@ -210,6 +210,15 @@ a {
   border-bottom-left-radius: 4px;
 }
 
+.bgSpanRed{
+  @apply bg-red-500
+}
+.bgSpanYellow{
+  @apply bg-yellow-500
+}
+.bgSpanGreen{
+  @apply bg-green-500
+}
 
 
 /* COMPONENTS END */
