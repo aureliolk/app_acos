@@ -8,6 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Star } from "phosphor-react";
+import Image from "next/image";
 
 export const FeedBack = () => {
     const { data } = useGetFeedBacksQuery()
@@ -51,7 +52,7 @@ export const FeedBack = () => {
                             <SwiperSlide key={feedBack.id} className="rounded-2xl rounded-bl-none p-5 mb-4 flex flex-col justify-between bg-slate-900/50">
                                 <header className="flex items-center gap-2 mb-2">
                                     <div className="w-12 h-12 rounded-full overflow-hidden">
-                                        <img src={feedBack.avatar?.url} alt={feedBack.name} />
+                                        <Image src={feedBack.avatar?.url as string} alt={feedBack.name} />
                                     </div>
                                     <div>
                                         <strong>{feedBack.name} {feedBack.lastName}</strong>
@@ -68,7 +69,7 @@ export const FeedBack = () => {
                                     {feedBack.feedback}
                                 </main>
                                 <footer>
-                                    <a href={"#"} target={"_blank"}><strong>Site: </strong>{feedBack.business}</a>
+                                    <a href={"https://acos-services.vercel.app"} target="noopener"><strong>Site: </strong>{feedBack.business}</a>
                                 </footer>
                             </SwiperSlide>
                         )

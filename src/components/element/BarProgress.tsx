@@ -34,6 +34,7 @@ export const BarProgress = ({width,loading,bgSpan}:ProgressBarProps) => {
             }
             
         }
+        
     },[width])  
 
 

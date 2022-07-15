@@ -1,18 +1,19 @@
-import { GithubLogo, InstagramLogo, LinkedinLogo, List, X } from "phosphor-react"
-import { useContext, useEffect, useState } from "react";
-import ProgressBar from './ProgressBar'
+import { useEffect, useContext, useState } from "react";
+import { GithubLogo, InstagramLogo, LinkedinLogo, X } from "phosphor-react"
+import ProgressBar from './element/ProgressBar'
 import classNames from "classnames";
 import { Transition } from '@headlessui/react'
 import scrollToElement from 'scroll-to-element';
 import { SectionContext } from "./contexts/SectionContexts";
+import Image from "next/image";
 
 
 
 export const Header = () => {
+    const {goToContato,goToFeedBack,goToPortifolio,goToTecnology}=useContext(SectionContext)
     const [animateHeader, setAnimateHeader] = useState(false);
     const [showMenu, setShowMenu] = useState(false)
     const [idButton, setIdButton] = useState<string | undefined>("")
-    const {goToContato,goToFeedBack,goToPortifolio,goToTecnology, setShowButtonHome}=useContext(SectionContext)
 
 
     useEffect(() => {
@@ -20,8 +21,8 @@ export const Header = () => {
             if (window.scrollY > 33) {
                 setAnimateHeader(true);
                 if(window.scrollY < 423){
-                    setShowButtonHome(true)
                     setIdButton(document.querySelector("#mHome")?.id)
+                    document.querySelector("#scrollButton")?.classList.add("block")
                 }else if(window.scrollY >= 423 && window.scrollY < 1103){
                     setIdButton(document.querySelector("#mTecnologias")?.id)
                 }else if(window.scrollY >= 1103 && window.scrollY < 1754){
@@ -36,8 +37,8 @@ export const Header = () => {
                     setIdButton("")
                 }   
             } else{
-                setAnimateHeader(false);
-                setShowButtonHome(false)
+                setAnimateHeader(false)
+                document.querySelector("#scrollButton")?.classList.add("hidden")
             }
         };
         window.addEventListener("scroll", listener);
@@ -52,7 +53,7 @@ export const Header = () => {
         <header className={classNames("transition-all w-full p-4 fixed z-20 bg-transparent top-0", { "bg-teal-900/80": animateHeader })}>
             <div className="flex justify-between items-center lg:items-baseline ">
                 <a href="#" className="w-44 h-full">
-                    <img src="/LgAcosv4x.png" alt="Logo da Acos Services" />
+                    <Image src="/LgAcosv4x.png" alt="Logo da Acos Services" />
                 </a>
                 <div className={classNames({ "hidden  lg:block flex-1": showMenu === false }, { "block": showMenu })}>
                     <ul className="justify-end gap-8 font-grotesk font-light  hidden lg:flex lg:text-base flex-col lg:flex-row">
@@ -90,7 +91,7 @@ export const Header = () => {
                                 <GithubLogo size={34} />
                             </div>
                             <div className=" w-full flex justify-center border-t border-b border-yellow-900 ">
-                                <img className="w-60" src="/LgAcosv4x.png" alt="Logo da Acos Services" />
+                                <Image className="w-60" src="/LgAcosv4x.png" alt="Logo da Acos Services" />
                             </div>
                         </div>
                     </Transition>
@@ -98,7 +99,7 @@ export const Header = () => {
                 {/* <div className="flex items-center gap-2">
                     <div className="lg:hidden" onClick={() => setShowMenu((showMenu) => !showMenu)}><List size={29} /></div>
                     <a href="#"><GithubLogo size={24} /></a>
-                    {scroll}
+                    <Scroll />
                 </div> */}
             </div>
             <div className="border-orange-500">

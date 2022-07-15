@@ -13,6 +13,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Image from "next/image";
 
 export const Portifolio = () => {
 
@@ -71,9 +72,9 @@ export const Portifolio = () => {
                                         () => { setShow(false), setIdElement(site.id) }
                                     }
                                 >
-                                    <img src={site.screenshot.url} alt={`Imagem ${site.title}`} />
-                                    {show && site.id === idElemnt && (
-                                        <a href={site.url} target="_blank" className="flex-1 flex flex-col justify-between rounded border border-orange-500 p-4 absolute bottom-0 h-1/2 bg-teal-900/90">
+                                    <Image src={site.screenshot.url} alt={`Imagem ${site.title}`} />
+                                    {show && site.id && site.url === idElemnt && (
+                                        <a href={site.url} target="noopener" className="flex-1 flex flex-col justify-between rounded border border-orange-500 p-4 absolute bottom-0 h-1/2 bg-teal-900/90">
                                             <div className="flex flex-col">
                                                 <span className="font-bold text-2xl">{site.title}</span>
                                                 <span className="text-xs">{site.description}</span>

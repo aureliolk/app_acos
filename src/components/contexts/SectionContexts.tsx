@@ -10,9 +10,9 @@ interface SectionContextProps {
     isLoading:boolean
     hiddenButton:boolean
     showFeedBack:boolean
+    setShowButtonHome: (showButtonHome:boolean)=>void
     NextButton:(id:string)=>void
     ScrollToHome:()=>void
-    setShowButtonHome: (showButtonHome:boolean)=>void
     goToTecnology:()=>void
     goToPortifolio:()=>void
     goToContato:()=>void
@@ -28,10 +28,8 @@ export const SectionProvider = ({ children }: ChildrenProps) => {
     const [showPortifolio, setShowPortifolio] = useState(false)
     const [showContato, setShowContato] = useState(false)
     const [showFeedBack, setShowFeedBack] = useState(false)
-
     const [hiddenButton, setHiddenButton] = useState(false)
-    const [showButtonHome, setShowButtonHome] = useState(false)
-
+    const [showButtonHome, setShowButtonHome] = useState(false) 
     const [isLoading, setIsLoading] = useState(false)
     
 

@@ -26,7 +26,7 @@ export const LogoListTecnology = () => {
     const [skill, setSkill] = useState("")
     const [isLoading, setIsLoading] = useState(false)
 
-    const [getSkillGraph, { data, refetch }] = useGetSkillIdLazyQuery()
+    const [getSkillGraph] = useGetSkillIdLazyQuery()
 
     const getSkill = (id: string) => {
         setIsLoading(true)
