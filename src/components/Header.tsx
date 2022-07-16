@@ -1,5 +1,5 @@
 import { useEffect, useContext, useState } from "react";
-import { GithubLogo, InstagramLogo, LinkedinLogo, X } from "phosphor-react"
+import { GithubLogo, InstagramLogo, LinkedinLogo, List, X } from "phosphor-react"
 import ProgressBar from './element/ProgressBar'
 import classNames from "classnames";
 import { Transition } from '@headlessui/react'
@@ -78,29 +78,22 @@ export const Header = () => {
                             <X size={26} className="border rounded " />
                         </div>
                         <ul className="flex justify-center gap-8 font-grotesk font-light p-8 text-xl lg:text-base flex-col lg:flex-row">
-                            <a href="#" className="hover:underline"><li>Início</li></a>
-                            <a href="#tecnologias" className="hover:underline"><li>Tecnologias</li></a>
-                            <a href="#portifolio" className="hover:underline"><li>Portifolio</li></a>
-                            <a href="#contato" className="hover:underline"><li>Contato</li></a>
-                            <a href="#feedback" className="hover:underline"><li>Contato</li></a>
+                            <a onClick={()=>{scrollToElement("#menu"), setShowMenu(false)}} ><li>Início</li></a>
+                            <a onClick={()=>{goToTecnology(), setShowMenu(false)}} ><li>Tecnologias</li></a>
+                            <a onClick={()=>{goToPortifolio(), setShowMenu(false)}} ><li>Portifolio</li></a>
+                            <a onClick={()=>{goToContato(), setShowMenu(false)}} ><li>Contato</li></a>
+                            <a onClick={()=>{goToFeedBack(), setShowMenu(false)}} ><li>FeedBack</li></a>
                         </ul>
                         <div className="flex flex-col justify-between items-center h-80 p-8  border-t border-yellow-900  lg:hidden">
-                            <div className="flex justify-center gap-4 w-full font-grotesk text-xl font-light">
-                                <InstagramLogo size={34} />
-                                <LinkedinLogo size={34} />
-                                <GithubLogo size={34} />
-                            </div>
-                            <div className=" w-full flex justify-center border-t border-b border-yellow-900 ">
-                                <Image width={240} height={23} src="/LgAcosv4x.png" alt="Logo da Acos Services" />
+                            <div className=" w-full flex justify-center">
+                                <Image width={240} height={35} src="/LgAcosv4x.png" alt="Logo da Acos Services" />
                             </div>
                         </div>
                     </Transition>
                 </div>
-                {/* <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2">
                     <div className="lg:hidden" onClick={() => setShowMenu((showMenu) => !showMenu)}><List size={29} /></div>
-                    <a href="#"><GithubLogo size={24} /></a>
-                    <Scroll />
-                </div> */}
+                </div>
             </div>
             <div className="border-orange-500">
                 <ProgressBar

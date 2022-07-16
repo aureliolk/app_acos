@@ -49,7 +49,7 @@ function Home(){
                     {showTecnology && hiddenButton ? null : <ButonNext idButton="tecnologias" />}
                 </section>
                 {showTecnology && (
-                    <div className="h-screen flex flex-col justify-between">
+                    <div className="lg:h-screen pb-6 lg:pb-0 flex flex-col justify-between">
                         <Technology />
                         {showPortifolio && hiddenButton ? null : <ButonNext idButton="portifolio" />}
                     </div>
@@ -61,22 +61,19 @@ function Home(){
                     </div>
                 )}
                 {showContato && (
-                    <div className="h-screen  flex flex-col justify-between">
+                    <div className="h-fit mb-20 lg:mb-0 lg:h-screen  flex flex-col justify-between">
                         <Contato />
                         {showFeedBack && hiddenButton ? null : <ButonNext idButton="feedback" />}
                     </div>
                 )}
                 {showFeedBack && (
-                    <div className="h-screen pt-8 flex flex-col justify-between">
+                    <div className="h-fit mb-32 lg:mb-0 lg:h-screen pt-8 flex flex-col justify-between">
                      <FeedBack />
                     </div>
                 )}
                 {showButtonHome && (
                     <ScrollToHome />
                 )}
-                <div>
-
-                </div>
             </div>
         </Layout>
     )

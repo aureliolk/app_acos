@@ -39,7 +39,7 @@ export const BarProgress = ({width,loading,bgSpan}:ProgressBarProps) => {
 
 
     return (
-        <div className=" w-80 gap-5 flex flex-col text-gray-900">
+        <div className=" w-80 gap-5 flex flex-col m-auto text-gray-900">
             <div className="loading-bar">
                 <div className={`loading-bar progress ${loading}`}>
                     <span className="last" style={{ width: `${lastSpan}%`, backgroundColor:`${bgSpan}`}}></span>

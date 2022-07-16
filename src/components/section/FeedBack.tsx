@@ -9,15 +9,18 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Star } from "phosphor-react";
 import Image from "next/image";
+import { Loading } from "../element/Loading";
 
 export const FeedBack = () => {
     const { data } = useGetFeedBacksQuery()
+
 
     return (
         <section id="feedback" className="p-2 lg:p-2">
             <h2 className="text-7xl text-yellow-100 font-bold text-center lg:text-start mb-8">FeedBack</h2>
             <p className="text-2xl px-8 lg:p-0 text-center lg:text-base lg:font-light lg:text-start my-8 lg:my-2">Veja o que os nossos clientes falam sobre nossos serviços.</p>
             <div>
+                {!data && <div className="flex-1 flex justify-center"><Loading size={40}/></div>}
                 <Swiper
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                     spaceBetween={50}

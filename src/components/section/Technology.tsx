@@ -11,13 +11,13 @@ export const Technology = () => {
     const [showDesc, setShowDesc] = useState(false)
 
     return (
-        <section id="tecnologias" className="font-grotesk pt-16  px-2 ">
+        <section id="tecnologias" className={classNames("font-grotesk pt-16 px-2",{"h-[1010px]":!showDesc},{"h-[1150px]": showDesc})}>
             <div className="flex flex-col flex-1">
                 <h2 className="text-6xl lg:text-7xl text-center lg:text-start text-yellow-100 font-bold w-full mb-0 lg:mb-8">Tecnologias</h2>
                 <div className="flex flex-col lg:flex-row lg:h-full-row ">
                     <div className="flex flex-col lg:w-[35%] justify-between py-4 lg:p-4">
                         <div className="flex justify-center flex-col">
-                            <div className={classNames("h-12 lg:h-full overflow-hidden w-full flex flex-col gap-2", { "h-36 text-center": showDesc })}>
+                            <div className={classNames("h-12 lg:h-full overflow-hidden w-full flex flex-col gap-2 text-center lg:text-start", { "h-48 ": showDesc })}>
                                 {!showDesc && (
                                     <>
                                         <p >Minha linguagem principal é JavaScript, e eu entendo que a melhor a linguagem é aquela que resolve e gera valor a demanda do cliente.</p>
