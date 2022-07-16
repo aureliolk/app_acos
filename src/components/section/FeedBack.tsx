@@ -52,7 +52,7 @@ export const FeedBack = () => {
                             <SwiperSlide key={feedBack.id} className="rounded-2xl rounded-bl-none p-5 mb-4 flex flex-col justify-between bg-slate-900/50">
                                 <header className="flex items-center gap-2 mb-2">
                                     <div className="w-12 h-12 rounded-full overflow-hidden">
-                                        <Image src={feedBack.avatar?.url as string} alt={feedBack.name} />
+                                        <Image width={48} height={48} src={feedBack.avatar?.url as string} alt={feedBack.name} />
                                     </div>
                                     <div>
                                         <strong>{feedBack.name} {feedBack.lastName}</strong>

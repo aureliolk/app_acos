@@ -72,8 +72,8 @@ export const Portifolio = () => {
                                         () => { setShow(false), setIdElement(site.id) }
                                     }
                                 >
-                                    <Image src={site.screenshot.url} alt={`Imagem ${site.title}`} />
-                                    {show && site.id && site.url === idElemnt && (
+                                   <div className="border h-[395px]"> <Image layout="fill" objectFit="cover" objectPosition="top"  src={site.screenshot.url} alt={`Imagem ${site.title}`} /></div>
+                                    {show && site.id === idElemnt && (
                                         <a href={site.url} target="noopener" className="flex-1 flex flex-col justify-between rounded border border-orange-500 p-4 absolute bottom-0 h-1/2 bg-teal-900/90">
                                             <div className="flex flex-col">
                                                 <span className="font-bold text-2xl">{site.title}</span>

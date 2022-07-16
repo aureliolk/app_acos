@@ -52,9 +52,9 @@ export const Header = () => {
     return (
         <header className={classNames("transition-all w-full p-4 fixed z-20 bg-transparent top-0", { "bg-teal-900/80": animateHeader })}>
             <div className="flex justify-between items-center lg:items-baseline ">
-                <a href="#" className="w-44 h-full">
-                    <Image src="/LgAcosv4x.png" alt="Logo da Acos Services" />
-                </a>
+                <div className="w-44 h-full">
+                    <Image width={176} height="27" src="/LgAcosv4x.png" alt="Logo da Acos Services"/>
+                </div>
                 <div className={classNames({ "hidden  lg:block flex-1": showMenu === false }, { "block": showMenu })}>
                     <ul className="justify-end gap-8 font-grotesk font-light  hidden lg:flex lg:text-base flex-col lg:flex-row">
                         <a onClick={()=>{scrollToElement("#menu")}} id="mHome"  className={classNames("hover:underline cursor-pointer", { "underline font-bold text-orange-500": idButton === "mHome" })}><li>Início</li></a>
@@ -91,7 +91,7 @@ export const Header = () => {
                                 <GithubLogo size={34} />
                             </div>
                             <div className=" w-full flex justify-center border-t border-b border-yellow-900 ">
-                                <Image className="w-60" src="/LgAcosv4x.png" alt="Logo da Acos Services" />
+                                <Image width={240} height={23} src="/LgAcosv4x.png" alt="Logo da Acos Services" />
                             </div>
                         </div>
                     </Transition>
