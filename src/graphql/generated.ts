@@ -48,6 +48,7 @@ export type Asset = Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID'];
+  imgSkill: Array<Skill>;
   /** System Locale field */
   locale: Locale;
   /** Get the other localizations for this document */
@@ -113,6 +114,19 @@ export type AssetHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
+};
+
+
+/** Asset system model */
+export type AssetImgSkillArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locales?: InputMaybe<Array<Locale>>;
+  orderBy?: InputMaybe<SkillOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<SkillWhereInput>;
 };
 
 
@@ -200,6 +214,7 @@ export type AssetCreateInput = {
   fileName: Scalars['String'];
   handle: Scalars['String'];
   height?: InputMaybe<Scalars['Float']>;
+  imgSkill?: InputMaybe<SkillCreateManyInlineInput>;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<AssetCreateLocalizationsInput>;
   mimeType?: InputMaybe<Scalars['String']>;
@@ -302,6 +317,9 @@ export type AssetManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  imgSkill_every?: InputMaybe<SkillWhereInput>;
+  imgSkill_none?: InputMaybe<SkillWhereInput>;
+  imgSkill_some?: InputMaybe<SkillWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -378,6 +396,7 @@ export type AssetUpdateInput = {
   fileName?: InputMaybe<Scalars['String']>;
   handle?: InputMaybe<Scalars['String']>;
   height?: InputMaybe<Scalars['Float']>;
+  imgSkill?: InputMaybe<SkillUpdateManyInlineInput>;
   /** Manage document localizations */
   localizations?: InputMaybe<AssetUpdateLocalizationsInput>;
   mimeType?: InputMaybe<Scalars['String']>;
@@ -605,6 +624,9 @@ export type AssetWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  imgSkill_every?: InputMaybe<SkillWhereInput>;
+  imgSkill_none?: InputMaybe<SkillWhereInput>;
+  imgSkill_some?: InputMaybe<SkillWhereInput>;
   mimeType?: InputMaybe<Scalars['String']>;
   /** All values containing the given string. */
   mimeType_contains?: InputMaybe<Scalars['String']>;
@@ -758,6 +780,7 @@ export type Customer = Node & {
   updatedAt: Scalars['DateTime'];
   /** User that last updated this document */
   updatedBy?: Maybe<User>;
+  url?: Maybe<Scalars['String']>;
 };
 
 
@@ -830,6 +853,7 @@ export type CustomerCreateInput = {
   lastName?: InputMaybe<Scalars['String']>;
   name: Scalars['String'];
   updatedAt?: InputMaybe<Scalars['DateTime']>;
+  url?: InputMaybe<Scalars['String']>;
 };
 
 export type CustomerCreateManyInlineInput = {
@@ -1012,6 +1036,25 @@ export type CustomerManyWhereInput = {
   /** All values that are not contained in given list. */
   updatedAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
   updatedBy?: InputMaybe<UserWhereInput>;
+  url?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  url_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  url_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  url_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  url_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  url_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  url_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  url_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  url_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  url_starts_with?: InputMaybe<Scalars['String']>;
 };
 
 export enum CustomerOrderByInput {
@@ -1030,7 +1073,9 @@ export enum CustomerOrderByInput {
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC'
+  UpdatedAtDesc = 'updatedAt_DESC',
+  UrlAsc = 'url_ASC',
+  UrlDesc = 'url_DESC'
 }
 
 export type CustomerUpdateInput = {
@@ -1039,6 +1084,7 @@ export type CustomerUpdateInput = {
   feedback?: InputMaybe<Scalars['String']>;
   lastName?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
+  url?: InputMaybe<Scalars['String']>;
 };
 
 export type CustomerUpdateManyInlineInput = {
@@ -1063,6 +1109,7 @@ export type CustomerUpdateManyInput = {
   feedback?: InputMaybe<Scalars['String']>;
   lastName?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
+  url?: InputMaybe<Scalars['String']>;
 };
 
 export type CustomerUpdateManyWithNestedWhereInput = {
@@ -1265,6 +1312,25 @@ export type CustomerWhereInput = {
   /** All values that are not contained in given list. */
   updatedAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
   updatedBy?: InputMaybe<UserWhereInput>;
+  url?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  url_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  url_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  url_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  url_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  url_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  url_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  url_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  url_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  url_starts_with?: InputMaybe<Scalars['String']>;
 };
 
 /** References Customer record uniquely */
@@ -3964,6 +4030,7 @@ export type Skill = Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID'];
+  img?: Maybe<Asset>;
   level: Scalars['Int'];
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']>;
@@ -3996,6 +4063,11 @@ export type SkillHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
+};
+
+
+export type SkillImgArgs = {
+  locales?: InputMaybe<Array<Locale>>;
 };
 
 
@@ -4038,6 +4110,7 @@ export type SkillConnection = {
 
 export type SkillCreateInput = {
   createdAt?: InputMaybe<Scalars['DateTime']>;
+  img?: InputMaybe<AssetCreateOneInlineInput>;
   level: Scalars['Int'];
   technology?: InputMaybe<Scalars['String']>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
@@ -4111,6 +4184,7 @@ export type SkillManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  img?: InputMaybe<AssetWhereInput>;
   level?: InputMaybe<Scalars['Int']>;
   /** All values greater than the given value. */
   level_gt?: InputMaybe<Scalars['Int']>;
@@ -4198,6 +4272,7 @@ export enum SkillOrderByInput {
 }
 
 export type SkillUpdateInput = {
+  img?: InputMaybe<AssetUpdateOneInlineInput>;
   level?: InputMaybe<Scalars['Int']>;
   technology?: InputMaybe<Scalars['String']>;
 };
@@ -4312,6 +4387,7 @@ export type SkillWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  img?: InputMaybe<AssetWhereInput>;
   level?: InputMaybe<Scalars['Int']>;
   /** All values greater than the given value. */
   level_gt?: InputMaybe<Scalars['Int']>;
@@ -4887,7 +4963,7 @@ export type GetSkillIdQuery = { __typename?: 'Query', skill?: { __typename?: 'Sk
 export type GetSkillQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetSkillQuery = { __typename?: 'Query', skills: Array<{ __typename?: 'Skill', level: number, technology?: string | null, id: string }> };
+export type GetSkillQuery = { __typename?: 'Query', skills: Array<{ __typename?: 'Skill', level: number, technology?: string | null, id: string, img?: { __typename?: 'Asset', url: string } | null }> };
 
 
 export const GetFeedBacksDocument = gql`
@@ -5009,10 +5085,13 @@ export type GetSkillIdLazyQueryHookResult = ReturnType<typeof useGetSkillIdLazyQ
 export type GetSkillIdQueryResult = Apollo.QueryResult<GetSkillIdQuery, GetSkillIdQueryVariables>;
 export const GetSkillDocument = gql`
     query getSkill {
-  skills(orderBy: level_DESC) {
+  skills(orderBy: level_DESC, first: 15) {
     level
     technology
     id
+    img {
+      url
+    }
   }
 }
     `;

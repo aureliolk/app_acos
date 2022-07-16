@@ -1,7 +1,10 @@
 query getSkill {
-  skills(orderBy: level_DESC) {
+  skills(orderBy: level_DESC, first: 15) {
     level
     technology
     id
+    img {
+      url
+    }
   }
 }
