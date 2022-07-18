@@ -23,6 +23,8 @@ export const Header = () => {
                 if(window.scrollY < 423){
                     setIdButton(document.querySelector("#mHome")?.id)
                     document.querySelector("#scrollButton")?.classList.add("block")
+                    document.querySelector("#scrollButton")?.classList.remove("hidden")
+
                 }else if(window.scrollY >= 423 && window.scrollY < 1103){
                     setIdButton(document.querySelector("#mTecnologias")?.id)
                 }else if(window.scrollY >= 1103 && window.scrollY < 1754){
@@ -39,6 +41,7 @@ export const Header = () => {
             } else{
                 setAnimateHeader(false)
                 document.querySelector("#scrollButton")?.classList.add("hidden")
+                document.querySelector("#scrollButton")?.classList.remove("block")
             }
         };
         window.addEventListener("scroll", listener);

@@ -9,16 +9,16 @@ export const Contato = () => {
                 <div className="flex flex-col gap-10 w-full lg:w-72">
                     <strong className="text-2xl text-center lg:text-start">Quer falar comigo ?</strong>
                     <div className="flex flex-wrap gap-y-6 gap-x-1 mb-8 lg:flex-col lg:gap-10">
-                        <button className="p-2 lg:p-0 rounded bg-slate-900/50 lg:bg-transparent flex-1 flex flex-col gap-2">
+                        <a href="https://api.whatsapp.com/send?phone=5573991121575&text=Oi%20!!%20Preciso%20de%20informa%C3%A7%C3%A3o%20.." className="p-2 lg:p-0 rounded bg-slate-900/50 lg:bg-transparent flex-1 flex flex-col gap-2" target="noopener">
                             <div className="flex items-center gap-4 w-full justify-center lg:justify-start">
                                 <WhatsappLogo size={20} className="text-orange-500" /> <strong>WhatsApp</strong>
                             </div>
                             <span className="text-sm font-light w-full lg:w-fit">73 99112-1575</span>
-                        </button>
-                        <button className="p-2 lg:p-0 rounded bg-slate-900/50 lg:bg-transparent  flex-1 flex flex-col gap-2">
+                        </a>
+                        <a href="malito:aurelio.cos@outlook.com" className="p-2 lg:p-0 rounded bg-slate-900/50 lg:bg-transparent  flex-1 flex flex-col gap-2" target="noopener">
                             <div className="flex items-center gap-4 w-full justify-center lg:justify-start"><EnvelopeSimple size={20} className="text-orange-500" /> <strong>Email</strong></div>
                             <span className="text-sm font-light w-full lg:w-fit">aurelio.cos@outlook.com</span>
-                        </button>
+                        </a>
                         <button className="p-2 lg:p-0 rounded bg-slate-900/50 lg:bg-transparent flex flex-col gap-2 w-full">
                             <div className="flex items-center gap-4 w-full justify-center lg:justify-start"><MapPinLine size={20} className="text-orange-500" /> <strong>Endereço</strong></div>
                             <div className="flex justify-center w-full text-sm font-light gap-2 lg:justify-start">

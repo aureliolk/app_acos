@@ -1,4 +1,4 @@
-import { GithubLogo, InstagramLogo, LinkedinLogo } from "phosphor-react"
+import { GithubLogo, InstagramLogo, LinkedinLogo, WhatsappLogo } from "phosphor-react"
 
 export const BoxSocial = () => {
     return (
@@ -6,6 +6,7 @@ export const BoxSocial = () => {
             <a href="https://github.com/aureliolk" className=" h-9 w-9 flex justify-center items-center "><GithubLogo className="hover:text-[32px] transition-all" /></a>
             <a href="https://www.linkedin.com/in/aureliolk/ " className=" h-9 w-9 flex justify-center items-center"><LinkedinLogo className="hover:text-[32px] transition-all" /></a>
             <a href="https://www.instagram.com/aureliolk/" className=" h-9 w-9 flex justify-center items-center"><InstagramLogo className="hover:text-[32px] transition-all" /></a>
+            <a href="https://api.whatsapp.com/send?phone=5573991121575&text=Oi%20!!%20Preciso%20de%20informa%C3%A7%C3%A3o%20.." className=" h-9 w-9 flex justify-center items-center"><WhatsappLogo className="hover:text-[32px] transition-all" /></a>
         </div>
     )
 }
