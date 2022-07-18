@@ -28,7 +28,7 @@ export const Portifolio = () => {
     return (
         <>
             <section id="portifolio" className="bg-cover font-grotesk pt-10 px-2 ">
-                <div>
+                <div className="">
                     <h2 className="text-center lg:text-start text-7xl text-yellow-100 font-bold">Portfólio</h2>
                     <p className="text-2xl lg:text-base lg:font-light text-center lg:text-start my-8 lg:my-2">Confira alguns dos meus projetos .</p>
                     <Swiper
@@ -43,7 +43,7 @@ export const Portifolio = () => {
                         onSwiper={(swiper) => console.log(swiper)}
                         onSlideChange={() => console.log('slide change')}
                         breakpoints={{
-                            420:{
+                            320:{
                                 slidesPerView: 1,
                                 spaceBetween: 20
                             },
@@ -88,7 +88,7 @@ export const Portifolio = () => {
                         )
                     })}
                     </Swiper>
-                    <div className="block lg:hidden mt-28" >
+                    <div className="block lg:hidden my-5 " >
                         <ButtonOrder />
                     </div>
                 </div>

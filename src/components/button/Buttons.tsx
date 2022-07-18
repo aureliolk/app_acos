@@ -28,8 +28,8 @@ export const ButonNext = ({ idButton }: ButtonNext) => {
     const { isLoading, NextButton } = useContext(SectionContext)
 
     return (
-        <div id={idButton} className={`inline-block m-auto rounded-full p-2 bg-gradient-to-b from-orange-500 transition-all hover:bg-gradient-to-t  hover:animate-bounce cursor-pointer`} onClick={() => { NextButton(idButton) }}  >
-            {isLoading ? <Loading /> : <CaretDown size={28} />}
+        <div id={idButton} className={`inline-block m-auto rounded-full p-2 animate-bounce bg-gradient-to-b from-orange-500 transition-all hover:bg-gradient-to-t cursor-pointer`} onClick={() => { NextButton(idButton) }}  >
+            {isLoading ? <Loading /> : <CaretDown size={30} />}
         </div>
     )
 }

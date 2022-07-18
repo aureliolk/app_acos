@@ -17,7 +17,7 @@ export const Technology = () => {
                 <div className="flex flex-col lg:flex-row lg:h-full-row ">
                     <div className="flex flex-col lg:w-[35%] justify-between py-4 lg:p-4">
                         <div className="flex justify-center flex-col">
-                            <div className={classNames("h-12 lg:h-full overflow-hidden w-full flex flex-col gap-2 text-center lg:text-start", { "h-48 ": showDesc })}>
+                            <div className={classNames("h-12 lg:h-full overflow-hidden w-full flex flex-col gap-2 text-center lg:text-start", { "h-52 ": showDesc })}>
                                 {!showDesc && (
                                     <>
                                         <p >Minha linguagem principal é JavaScript, e eu entendo que a melhor a linguagem é aquela que resolve e gera valor a demanda do cliente.</p>

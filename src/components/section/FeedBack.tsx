@@ -33,7 +33,7 @@ export const FeedBack = () => {
                     onSwiper={(swiper) => console.log(swiper)}
                     onSlideChange={() => console.log('slide change')}
                     breakpoints={{
-                        420: {
+                        320: {
                             slidesPerView: 1,
                             spaceBetween: 20
                         },
