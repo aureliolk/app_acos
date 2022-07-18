@@ -64,26 +64,8 @@ export const LogoListTecnology = () => {
         })
 
     }
-
-    console.log(data)
     return (
         <>
-            {/* <div className="grid text-2xl gap-x-2 gap-y-5 grid-cols-4 w-full">
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5cquiba1ema0blp1o881a4j") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><Html5 /></div></div>
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5cquu1v1qng0bknw94ca4ad") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><Css /></div></div>
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5cqtxl31qip0bknemjr4ape") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><JavaScript /></div></div>
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5ehbowu6ntk0bknluicts0i") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><Sass /></div></div>
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5d6w9xp38t60blp8mh48bpt") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><TailWindCss /></div></div>
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5ehcpoz6nuo0bkna8tbotvj") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><React /></div></div>
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5cwzwh82ews0bkndjh690pe") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><TypeScript /></div></div>
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5d6osou385o0blpd15oqoik") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><Next /></div></div>
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5d6ocya3khe0bknykdhhuvm") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><Apollo /></div></div>
-                <div className="logolist3" onMouseEnter={() => { getSkill("cl5d6nzdp3kf70bknzdpbugid") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14  lg:w-12 lg:h-14 p-2 flex justify-center items-center"><GraphCms /></div></div>
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5d6nnn038130blpdto6t27i") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><GraphQl /></div></div>
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5ehdto26nxl0bknwryrni73") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><Shopify /></div></div>
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5ehedw86nzn0bknhank2xba") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><WooCommerce /></div></div>
-                <div className="logolist" onMouseEnter={() => { getSkill("cl5dzuthr5cv10bknlb395xw1") }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}><div className="w-14 h-14 lg:w-16 lg:h-16 p-2 flex justify-center items-center"><WordPress /></div></div>
-            </div> */}
             {!data && <div className="flex-1 w-full flex justify-center"><Loading size={40}/></div>}
             <div className="grid text-2xl gap-x-2 gap-y-5 grid-cols-4 w-full">
                 {data?.skills.map(skill =>{

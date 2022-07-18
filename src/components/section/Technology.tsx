@@ -11,7 +11,7 @@ export const Technology = () => {
     const [showDesc, setShowDesc] = useState(false)
 
     return (
-        <section id="tecnologias" className={classNames("font-grotesk pt-16 px-2",{"h-[1010px]":!showDesc},{"h-[1150px]": showDesc})}>
+        <section id="tecnologias" className={classNames("font-grotesk pt-16 lg:pt-0 px-2",{"h-[1010px]":!showDesc},{"h-[1150px]": showDesc})}>
             <div className="flex flex-col flex-1">
                 <h2 className="text-6xl lg:text-7xl text-center lg:text-start text-yellow-100 font-bold w-full mb-0 lg:mb-8">Tecnologias</h2>
                 <div className="flex flex-col lg:flex-row lg:h-full-row ">

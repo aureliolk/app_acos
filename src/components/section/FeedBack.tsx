@@ -30,8 +30,6 @@ export const FeedBack = () => {
                             draggable: true,
                         }
                     }
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
                     breakpoints={{
                         320: {
                             slidesPerView: 1,

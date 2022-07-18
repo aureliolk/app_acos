@@ -19,7 +19,7 @@ function Home(){
     return (
         <Layout>
             <div className="lg:p-4 lg:px-10" id="menu">
-                <section className={classNames("h-fit lg:h-screen mb-5 flex flex-col justify-between w-full",{"h-auto":showTecnology})} >
+                <section className={classNames("h-fit lg:h-screen mb-5 lg:mb-0 flex flex-col justify-between w-full",{"h-auto":showTecnology})} >
                     <div className='py-20 w-full flex flex-col lg:flex-row justify-between items-center'>
                         <div className='flex flex-col justify-between gap-2 flex-1'>
                             <h1 className="text-yellow-100 font-grotesk font-bold text-center p-1 lg:text-start text-4xl lg:text-6xl ">
@@ -55,7 +55,7 @@ function Home(){
                     </div>
                 )}
                 {showPortifolio && (
-                    <div className="h-fit mb-5 lg:h-screen  flex flex-col justify-between">
+                    <div className="h-fit mb-5 lg:mb-0 lg:h-screen  flex flex-col justify-between">
                         <Portifolio />
                         {showContato && hiddenButton ? null : <ButonNext idButton="contato" />}
                     </div>
