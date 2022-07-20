@@ -1,6 +1,57 @@
+import classNames from "classnames"
 import { EnvelopeSimple, MapPinLine, WhatsappLogo } from "phosphor-react"
+import { FormEvent, useState } from "react"
+import { Loading } from "../element/Loading"
+import axios from "axios"
 
 export const Contato = () => {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+    const [description, setDescription] = useState("")
+    const [erro, setErro] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
+
+    const onSubmit = async (event: FormEvent) => {
+        event.preventDefault()
+        setIsLoading(true)
+        if (!name || !email || !phone || !description) {
+            setErro("Preencha todos os campos")
+            setTimeout(() => {
+                setErro("")
+            }, 3000);
+        }
+
+        const data = {
+            name,
+            email,
+            phone,
+            description
+        }
+
+        const res = await axios.post("/api/contact", data)
+
+        console.log(res)
+
+        if (res.status === 200) {
+            setIsLoading(false)
+            setErro("Sua mensagem foi enviada com Sucesso!")
+            setName("")
+            setEmail("")
+            setPhone("")
+            setDescription("")
+            setTimeout(() => {
+                setErro("")
+            }, 3000)
+        } else {
+            setErro("Houve um erro ao enviar sua mensagem!")
+            setIsLoading(false)
+            setTimeout(() => {
+                setErro("")
+                
+            }, 3000)
+        }
+    }
 
     return (
         <section id="contato" className="font-grotesk py-10 px-2">
@@ -29,15 +80,17 @@ export const Contato = () => {
                     </div>
                 </div>
                 <div className="flex-1">
-                    <form className="flex flex-col justify-end items-end gap-4 w-full p-4  bg-slate-900/40  rounded">
-                        <input className="w-full border-b border-teal-800 p-2 bg-transparent font-light outline-none focus:border focus:border-orange-500" type="text" placeholder="Nome/Empresa" />
+                    <form className="flex flex-col justify-end items-end gap-4 w-full p-4  bg-slate-900/40  rounded" onSubmit={onSubmit}>
+                        <input value={name} onChange={({ target }) => { setName(target.value) }} className={classNames("w-full p-2 bg-transparent font-light outline-none focus:border focus:border-orange-500", { "border-b border-teal-800": !name }, { "border border-orange-500/50": name })} type="text" placeholder="Nome/Empresa" />
                         <div className="flex w-full gap-4">
-                            <input className="w-full border-b border-teal-800 p-2 bg-transparent font-light outline-none focus:border focus:border-orange-500" type="text" placeholder="Email" />
-                            <input className="w-full border-b border-teal-800 p-2 bg-transparent font-light outline-none focus:border focus:border-orange-500" type="text" placeholder="Celular/WhatsApp" />
+                            <input value={email} onChange={({ target }) => { setEmail(target.value) }} className={classNames("w-full p-2 bg-transparent font-light outline-none focus:border focus:border-orange-500", { "border-b border-teal-800": !email }, { "border border-orange-500/50": email })} type="text" placeholder="Email" />
+                            <input value={phone} onChange={({ target }) => { setPhone(target.value) }} className={classNames("w-full p-2 bg-transparent font-light outline-none focus:border focus:border-orange-500", { "border-b border-teal-800": !phone }, { "border border-orange-500/50": phone })} type="text" placeholder="Celular/WhatsApp" />
                         </div>
-                        <textarea className="w-full border rounded border-teal-800 p-2 bg-transparent font-light outline-none focus:border focus:border-orange-500" placeholder="Assunto" rows={5} />
-                        <button className="border border-teal-800 inline-block w-fit px-12 py-1 font-light float-right">Enviar</button>
-
+                        <textarea value={description} onChange={({ target }) => { setDescription(target.value) }} className={classNames("w-full rounded  p-2 bg-transparent font-light outline-none focus:border focus:border-orange-500", { "border border-teal-800": !description }, { "border border-orange-500/50": description })} placeholder="Assunto" rows={5} />
+                        <div className="flex justify-between items-center w-full">
+                            <div>{erro}</div>
+                            <button className="border rounded border-teal-800 inline-block w-fit px-12 py-1 font-light float-right">{isLoading ? <Loading /> : "Enviar"}</button>
+                        </div>
                     </form>
                 </div>
             </div>
