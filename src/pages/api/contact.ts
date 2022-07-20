@@ -46,7 +46,7 @@ export default async function handler(
   })
 
   const AcosServicesWelcome = await transporter.sendMail({
-    from: `"Acos Services Suporte" <${username}>`,
+    from: `"Acos Services Suporte`,
     to: `${email}`,
     subject: `Solicita de Contato`,
     html:`
@@ -55,11 +55,11 @@ export default async function handler(
       <h2>${name}</h2>  
     </div>
     <div>
-    Recebemos sua solicitação de suporte, em algumas horas nosso time entrará em contato para o número ${phone}.
+      Recebemos sua solicitação de suporte, em algumas horas nosso suporte entrará em contato no numero ${phone}.
     </div>
     <div>
       <strong>BY</strong>: Acos Services
-      <br>
+      </br>
       <strong>CTO</strong>: Aurélio Castro
     </div>
     
