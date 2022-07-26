@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://acos-labx.vercel.app/ssAcosServices.png" height="512px"/>            
+    <img src="https://acos-services.vercel.app/ssAcosServices.png" height="512px"/>            
 </div>
 
     
