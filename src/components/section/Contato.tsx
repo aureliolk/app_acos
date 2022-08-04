@@ -20,6 +20,7 @@ export const Contato = () => {
             setTimeout(() => {
                 setErro("")
             }, 3000);
+            return setIsLoading(false)
         }
 
         const data = {
