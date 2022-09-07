@@ -1,5 +1,5 @@
 import { useEffect, useContext, useState } from "react";
-import { GithubLogo, InstagramLogo, LinkedinLogo, List, X } from "phosphor-react"
+import {  List, X } from "phosphor-react"
 import ProgressBar from './element/ProgressBar'
 import classNames from "classnames";
 import { Transition } from '@headlessui/react'
@@ -56,7 +56,7 @@ export const Header = () => {
         <header className={classNames("transition-all w-full p-4 fixed z-20 bg-transparent top-0", { "bg-teal-900/80": animateHeader })}>
             <div className="flex justify-between items-center lg:items-baseline ">
                 <div className="w-44 h-full">
-                    <Image width={176} height="27" src="/LgAcosv4x.png" alt="Logo da Acos Services"/>
+                    <Link href="/"><Image width={176} height="27" src="/LgAcosv4x.png" alt="Logo da Acos Services"/></Link>
                 </div>
                 <div className={classNames({ "hidden  lg:block flex-1": showMenu === false }, { "block": showMenu })}>
                     <ul className="justify-end gap-8 font-grotesk font-light  hidden lg:flex lg:text-base flex-col lg:flex-row">
