@@ -1,5 +1,5 @@
 query getPortifolio {
-  portfolios {
+  portfolios(orderBy: publishedAt_DESC) {
     id
     description
     url
@@ -9,4 +9,3 @@ query getPortifolio {
     }
   }
 }
-    
