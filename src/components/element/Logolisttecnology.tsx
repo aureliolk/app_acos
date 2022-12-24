@@ -1,18 +1,5 @@
 import { useState } from "react"
-import { Apollo } from "../../../public/tecLogo/apollo"
-import { Css } from "../../../public/tecLogo/css"
-import { GraphCms } from "../../../public/tecLogo/graphcms"
-import { GraphQl } from "../../../public/tecLogo/graphql"
-import { Html5 } from "../../../public/tecLogo/html"
-import { JavaScript } from "../../../public/tecLogo/javascript"
-import { Next } from "../../../public/tecLogo/next-js"
 import { React } from "../../../public/tecLogo/react"
-import { Sass } from "../../../public/tecLogo/sass"
-import { Shopify } from "../../../public/tecLogo/shopify"
-import { TailWindCss } from "../../../public/tecLogo/tailwindcss"
-import { TypeScript } from "../../../public/tecLogo/typescript"
-import { WooCommerce } from "../../../public/tecLogo/woocommerce"
-import { WordPress } from "../../../public/tecLogo/wordpress"
 import { useGetSkillIdLazyQuery, useGetSkillQuery } from "../../graphql/generated"
 import Image from "next/image";
 import { Spinner } from "phosphor-react"
@@ -72,7 +59,7 @@ export const LogoListTecnology = () => {
                     return(
                         <div key={skill.id} className="logolist" onMouseEnter={() => { getSkill(skill.id) }} onMouseLeave={() => { setWidth(0), setSkill(""), setColor(""), setBg("") }}>
                             <div className="w-16 h-2w-16 lg:w-16 lg:h-16 p-2 flex justify-center items-center">
-                                {skill.img?.url && <Image  src={skill.img.url} width={130} height={130} objectFit="contain" />}
+                                {skill.img?.url && <Image  src={skill.img.url} width={130} height={130} objectFit="contain" alt="Imagem da ligaguem de programação" />}
                             </div>
                         </div>
                     )

@@ -2,7 +2,7 @@ import { Link } from "phosphor-react";
 import { useState } from "react"
 import { useGetPortifolioQuery } from "../../graphql/generated"
 import { ButtonOrder } from "../button/Buttons"
-import Link from "next/link"
+
 
 
 // import Swiper core and required modules
