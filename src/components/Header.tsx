@@ -84,7 +84,7 @@ export const Header = () => {
                         <ul className="flex justify-center gap-8 font-grotesk font-light p-8 text-xl lg:text-base flex-col lg:flex-row">
                             <a onClick={()=>{scrollToElement("#menu"), setShowMenu(false)}} ><li>Início</li></a>
                             <a onClick={()=>{goToTecnology(), setShowMenu(false)}} ><li>Tecnologias</li></a>
-                            <a onClick={()=>{goToPortifolio(), setShowMenu(false)}} ><li>Portifolio</li></a>
+                            <a onClick={()=>{goToPortifolio(), setShowMenu(false)}} ><li>Portfólio</li></a>
                             <a onClick={()=>{goToContato(), setShowMenu(false)}} ><li>Contato</li></a>
                             <a onClick={()=>{goToFeedBack(), setShowMenu(false)}} ><li>FeedBack</li></a>
                         </ul>
