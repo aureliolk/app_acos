@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+.git
+.omo
+.playwright-mcp
+docs
+.env*
+*.log
+qa-*.png

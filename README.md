@@ -44,7 +44,19 @@ npm run dev
 
 # build de produção
 npm run build && npm start
+
+# Docker (multi-stage, standalone, ~231MB)
+docker build -t acos-portfolio .
+docker run -p 3000:3000 acos-portfolio
 ```
+
+### Docker / Coolify
+
+O `Dockerfile` faz build multi-stage (`node:22-alpine`): deps → builder (`next build` standalone) → runner mínimo
+com usuário `nextjs` não-root. A porta segue a env `PORT` (padrão `3000`) e o bind é `0.0.0.0`.
+
+No Coolify, basta criar a aplicação apontando para o repo — o Dockerfile na raiz é detectado automaticamente
+e a porta esperada é `3000`.
 
 ## Editando o conteúdo
 
