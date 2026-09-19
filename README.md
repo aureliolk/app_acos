@@ -1,72 +1,76 @@
+# Acos — Portfólio v2
+
 <div align="center">
-    <img src="https://acos-services.vercel.app/ssAcosServices.png" height="512px"/>            
+  <img src="public/projects/lumibotx.png" alt="Acos v2 — portfólio" width="720px" />
 </div>
 
-    
-<a href="https://acos-services.vercel.app">   
-  <p align="center">
-  <img alt="Image da Home do Projeto Acos Lab" src="https://acos-labx.vercel.app/developedAureliolk.svg">
-  </p>
-</a>
+Portfólio pessoal de **Aurélio** (Acos) — Senior Full-Stack & AI Engineer. Versão 2 do meu primeiro
+projeto sério, agora escrita com a stack que uso de verdade no dia a dia.
 
-<p align="center">
-  <a href="#sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#como-executar">Como Executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
-</p>
+Ao contrário da versão de 2022 (Next 12 + GraphCMS + Apollo), esta versão é **100% estática**:
+sem CMS, sem backend, sem formulário. O conteúdo mora em arquivos TypeScript tipados e os projetos
+exibidos são produtos reais em produção.
 
+## Projetos em destaque
 
-## Sobre
+| Produto | URL |
+|---|---|
+| LumibotX — SaaS de atendimento com IA | https://lumibotx.com.br |
+| ChatX — Atendimento IA multi-tenant | https://chatx.space |
+| XAgentPro — Agentes de IA | https://xagentpro.dev/chat |
+| Metris — Gestão contábil médica | https://smr.med.br |
+| BoxIA ML — Copiloto Mercado Livre | https://ml.chatx.space/chat |
+| SRM — Sistema de Relacionamento Médico | https://srm.med.br |
+| ClipDownX — Downloader self-hosted | https://clipdownx.cloud |
 
-Acos Services é projeto idealizado por min, esse projeto tem como objetivo fornece meu portifolio com as tecnologias com as quais venho trabalhando durante esses anos de desenolvimento. 
+## Stack
 
-Minha ideia foi disponibilizar um Portifolio ilustrativo, onde o cliente tenha interações para saber mais sobre meus trabalho ja desenvolvidos. Ele é divido em sessões contendo um Hero que é minha apresentação principal, Tecnologias com os Scores de cada uma que ja ultilizei, Portifolio em slides de trabalhos ja desenvolvidos, Contato para o cliente que precisam de um comunicação comigo e FeedBack de clientes que ja fizeram algum trabalho comigo.
+- **Next.js 16** (App Router, Turbopack) + **React 19** + **TypeScript strict**
+- **Tailwind CSS 4** · **motion** (animações) · **lucide-react** (ícones)
+- Fontes Geist via `next/font` · `next/image` para os screenshots
+- Deploy: Vercel (https://acos-services.vercel.app)
 
-**Colabore com o projeto, Comentarios, Sugestões, Report de Bug, Melhorias para o projeto.❤️**
-
-## Tecnologias
-
-- [NextJS](https://vitejs.dev/)
-- [React](https://reactjs.org)
-- [Typescript](https://www.typescriptlang.org/)
-- [Tailwindcss](https://tailwindcss.com/)
-- [GraphQL](https://graphql.org/)
-- [GraphCms](https://graphcms.com/)
-- [Apollo Client](https://www.apollographql.com/)
-
-## Como Executar
-
-- ### **Pré-requisitos**
-
-  - É **necessário** possuir o **[Node.js](https://nodejs.org/en/)** instalado no computador
-  - É **necessário** possuir o **[Git](https://git-scm.com/)** instalado e configurado no computador
-  - Também, é **preciso** ter um gerenciador de pacotes seja o **[NPM](https://www.npmjs.com/)** ou **[Yarn](https://yarnpkg.com/)**.   
-
-1. Faça um clone do repositório:
+## Como executar
 
 ```sh
-  $ git clone https://github.com/aureliolk/ignite-labx.git
+# Node 22 (arm64 via nvm)
+nvm use 22
+
+# instalar dependências
+npm install
+
+# desenvolvimento
+npm run dev
+
+# build de produção
+npm run build && npm start
 ```
 
-2. Executando a Aplicação:
+## Editando o conteúdo
 
-```sh
-  # Aplicação web
-  $ cd ignite-labx
-  # Instalando as dependências do projeto.
-  $ yarn # ou npm install
-  # Inicie a aplicação web
-  $ yarn start # ou npm start
+Todo o conteúdo do site é versionado em código:
+
+- `src/content/projects.ts` — projetos, descrições, tags e screenshots
+- `src/content/stack.ts` — tecnologias por domínio
+- `src/content/social.ts` — links de contato (WhatsApp, e-mail, LinkedIn, GitHub)
+
+Screenshots dos produtos ficam em `public/projects/` (capturados dos sites reais).
+
+## Estrutura
+
+```
+src/
+  app/        # layout, page, globals, sitemap, robots, icon
+  components/ # header, hero, projects, stack, about, contact, footer, primitivas
+  content/    # fonte da verdade dos dados
+  lib/        # cn (clsx + tailwind-merge)
 ```
 
 ---
 
-
-<p align="center">Minhas redes sociais !</p>
-<p align="center" >
-<a href="https://www.linkedin.com/in/aureliolk/">
-    <img src="https://acos-labx.vercel.app/developerLikedinAureliolk.svg" />
-</a>
-<a href="https://instagram.com/aureliolk">
-    <img src="https://acos-labx.vercel.app/developerInstagramAureliolk.svg" />
-</a></p>
+<p align="center">
+  <a href="https://www.linkedin.com/in/aureliolk/">LinkedIn</a> ·
+  <a href="https://github.com/aureliolk">GitHub</a> ·
+  <a href="https://wa.me/5573991211575">WhatsApp</a> ·
+  <a href="mailto:contato@acos-global.com">contato@acos-global.com</a>
+</p>

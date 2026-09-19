@@ -1,6 +1,0 @@
-query GetSkillID($id:ID) {
-  skill(where: {id: $id}) {
-    level
-    technology
-  }
-}
